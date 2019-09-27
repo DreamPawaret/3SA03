@@ -33,16 +33,31 @@
 }
 
 .card {
+  background: rgb(255, 255, 255);
   display: inline-block;
   text-align: center;
   width: 3em;
   font-size: 2em;
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-  margin: 1em;
-  user-select: none;
+  margin: 0.5em;
+  
  }
 
 .activeCard {
-  color: #008000;
-  background: #7FFFD4;
+  color: white;
+  background: gray;
+}
+body{
+  background :url(http://getwallpapers.com/wallpaper/full/c/2/5/361578.jpg) ;
+}
+
+button {
+  background: black;
+  color:white;
+  display: inline-block;
+  text-align: center;
+  width: 5em;
+  font-size: 1.4em;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+
 }

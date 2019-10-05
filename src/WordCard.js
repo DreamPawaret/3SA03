@@ -28,21 +28,22 @@ Component {
         if(guess.length == this.state.chars.length){
             //console.log(`${guess.join('').toString} ${this.state.chars.join('').toString()}`)
 
-            if(guess.join('').toString() == this.state.chars.join('').toString()){
+            if(guess.join('').toString() == this.state.word){
                 this.setState({guess: [], completed: true})
                 document.getElementById('result').innerHTML = `Congratulations!`
-                document.getElementById('answer').innerHTML = `Answer is : ${this.state.chars.join("")}`
+                document.getElementById('answer').innerHTML = `Answer is : ${this.state.word}`
             }
             else{
                 this.setState({guess: [], attempt: this.state.attempt + 1})
-                //document.getElementById('result').innerHTML = `Attempt Or Try Again: ${this.state.attempt} `
-                document.getElementById('answer').innerHTML = `Answer is : ${this.state.chars.join("")}` 
- 
+                document.getElementById('result').innerHTML = `Attempt Or Try Again: ${this.state.attempt} `
+                //document.getElementById('answer').innerHTML = `Answer is : ${this.state.word}`
             }
 
             if(this.state.attempt == 3){
                 document.getElementById('result').innerHTML = `Game Over! So RestartGame`
+                document.getElementById('answer').innerHTML = `Answer is : ${this.state.word}`
                 setTimeout(() => window.location.reload(false),3000)
+                
             }
         }
     }
@@ -66,7 +67,7 @@ Component {
         return (
             <div>
             { 
-                Array.from(this.props.value).map((c, i) => <CharacterCard value={c} key={i} activationHandler={this.activationHandler} />) 
+                Array.from(this.state.chars).map((c, i) => <CharacterCard value={c} key={i} activationHandler={this.activationHandler} attempt={this.state.attempt}/>) 
             }
             </div>
         );

@@ -14,9 +14,7 @@ class App extends Component {
     newgame = () => {
         window.location.reload(false);
     }
-    requestHint = () => {
-        this.setState({ requestHint: true });
-    }
+
 
     render() {
         return (
